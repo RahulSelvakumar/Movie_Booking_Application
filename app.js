@@ -1,9 +1,11 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv=require("dotenv");
+const userRouter= require("./routes/user-routes");
 const app = express();
 
 app.use("/users",userRouter);
+app.use(express.json());
 mongoose
   .connect(
     `mongodb+srv://test:${process.MONGOOSE_PASSWORD}@cluster0.4pek4xr.mongodb.net/`

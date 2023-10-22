@@ -1,4 +1,5 @@
-import mongoose from 'mongoose';
+const mongoose=require('mongoose');
+
 const userSchema=new mongoose.Schema({
     name:{
         type: String,
@@ -15,5 +16,5 @@ const userSchema=new mongoose.Schema({
         minLength:6
     }
 });
-
-export default userRouter
+const user=mongoose.model('user', userSchema);
+module.exports=user;
