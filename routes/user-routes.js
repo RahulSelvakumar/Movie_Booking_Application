@@ -1,8 +1,11 @@
 const express=require("express")
-import {getAllUsers,signUp} from "../controller/user-controller";
+import { getAllUser, signUp, updateUser, deleteUser, logIn} from "../controller/user-controller";
 
 const userRouter=express.Router();
-userRouter.get("/",getAllUsers);
+userRouter.get("/",getAllUser);
 userRouter.post("/singup",signUp);
+userRouter.put("/:id", updateUser)
+userRouter.delete("/:id", deleteUser)
+userRouter.post("/login", logIn)
 
 export default userRouter
